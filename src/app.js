@@ -17,6 +17,7 @@ class SpencerAndWilliamsSearch {
     const searchbox = document.querySelector('#searchbox input');
 
     searchbox.addEventListener('click', () => {
+      console.log("is this where to kick off the query from the search box?");
       autocomplete.style.display = 'block';
     });
 
