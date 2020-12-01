@@ -22,12 +22,12 @@ class ResultPage {
    */
   _registerClient() {
     this._searchClient = algoliasearch(
-      '',
-      ''
+      'STUNKNEZ7U',
+      '6fd8be68ce099ddf825e764575b2b44c'
     );
 
     this._searchInstance = instantsearch({
-      indexName: 'ecommerce-v2',
+      indexName: 'product_catalog',
       searchClient: this._searchClient,
     });
   }

@@ -5,7 +5,7 @@ import instantsearch from 'instantsearch.js';
 import { hits, searchBox, configure } from 'instantsearch.js/es/widgets';
 
 // Autocomplete Template
-import autocompleteProductTemplate from '../templates/autocomplete-product';
+import autocompleteProductTemplate from '../templates/autocomplete-suggestions';
 
 /**
  * @class Autocomplete
@@ -28,12 +28,12 @@ class Autocomplete {
    */
   _registerClient() {
     this._searchClient = algoliasearch(
-      '',
-      ''
+      'STUNKNEZ7U',
+      '6fd8be68ce099ddf825e764575b2b44c'
     );
 
     this._searchInstance = instantsearch({
-      indexName: 'ecommerce-v2',
+      indexName: 'product_suggestions',
       searchClient: this._searchClient,
     });
   }
