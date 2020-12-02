@@ -22,7 +22,7 @@ class ResultPage {
    */
   _registerClient() {
     this._searchClient = algoliasearch(
-      'STUNKNEZ7U', 
+      'STUNKNEZ7U',
       '6fd8be68ce099ddf825e764575b2b44c'
     );
 
