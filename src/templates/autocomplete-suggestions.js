@@ -1,9 +1,19 @@
-const autocompleteProduct = hit => `<div class="autocomplete-product">
-  <div class="autocomplete-product__details">
-    <h3 class="autocomplete-product__name">${
-      hit._highlightResult.query.value
-    }</h3>
-  </div>
-</div>`;
+import algoliasearch from 'algoliasearch';
+import instantsearch from 'instantsearch.js';
+import { connectHits } from 'instantsearch.js/es/connectors'
+const renderQSHits = ({ widgetParams, hits }, isFirstRender) => {
+  const container = document.querySelector(widgetParams.container);
 
-export default autocompleteProduct;
+  container.innerHTML = `<ul>
+    ${hits
+      .map(
+        (item) => `
+        <li>${instantsearch.highlight({ hit: item, attribute: 'query' })}</li>
+      `
+      )
+      .join('')}
+  </ul>`;
+};
+
+const QSHits = connectHits(renderQSHits);
+export default QSHits;

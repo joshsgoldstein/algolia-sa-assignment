@@ -1,6 +1,6 @@
 import algoliasearch from 'algoliasearch';
 import instantsearch from 'instantsearch.js';
-import { hits, pagination, refinementList } from 'instantsearch.js/es/widgets';
+import { hits, pagination, refinementList, clearRefinements } from 'instantsearch.js/es/widgets';
 
 import resultHit from '../templates/result-hit';
 
@@ -22,12 +22,12 @@ class ResultPage {
    */
   _registerClient() {
     this._searchClient = algoliasearch(
-      'STUNKNEZ7U',
-      '6fd8be68ce099ddf825e764575b2b44c'
+      'PBBLIP2IAA', 
+      '0851eaa0eb21ce7d58ae64f590d787d8'
     );
 
     this._searchInstance = instantsearch({
-      indexName: 'product_catalog',
+      indexName: 'products',
       searchClient: this._searchClient,
     });
   }
@@ -47,6 +47,9 @@ class ResultPage {
       }),
       pagination({
         container: '#pagination',
+      }),
+      clearRefinements({
+        container: '#clear-refinements',
       }),
       refinementList({
         container: '#brand-facet',
