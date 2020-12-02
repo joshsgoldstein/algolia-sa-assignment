@@ -1,8 +1,8 @@
 import algoliasearch from 'algoliasearch';
 import instantsearch from 'instantsearch.js';
-import { hits, pagination, refinementList, clearRefinements } from 'instantsearch.js/es/widgets';
+import { hits, pagination, refinementList, clearRefinements, currentRefinements, stats, sortBy } from 'instantsearch.js/es/widgets';
 
-import resultHit from '../templates/result-hit';
+import resultHit from './result-hit';
 
 /**
  * @class ResultsPage
@@ -22,12 +22,12 @@ class ResultPage {
    */
   _registerClient() {
     this._searchClient = algoliasearch(
-      'PBBLIP2IAA', 
-      '0851eaa0eb21ce7d58ae64f590d787d8'
+      'STUNKNEZ7U', 
+      '6fd8be68ce099ddf825e764575b2b44c'
     );
 
     this._searchInstance = instantsearch({
-      indexName: 'products',
+      indexName: 'product_catalog',
       searchClient: this._searchClient,
     });
   }
@@ -51,6 +51,20 @@ class ResultPage {
       clearRefinements({
         container: '#clear-refinements',
       }),
+      currentRefinements({
+        container: '#current-refinements',
+      }),
+      stats({
+        container: '#stats',
+      }),
+      // sortBy({
+      //   container: '#sort-by',
+      //   items: [
+      //     { label: 'Featured', value: 'instant_search' },
+      //     { label: 'Price (asc)', value: 'instant_search_price_asc' },
+      //     { label: 'Price (desc)', value: 'instant_search_price_desc' },
+      //   ],
+      // }),
       refinementList({
         container: '#brand-facet',
         attribute: 'brand',

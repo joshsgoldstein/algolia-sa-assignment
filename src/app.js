@@ -1,4 +1,4 @@
-import ResultsPage from './components/results-page';
+import ResultsPage from './components/results/results-page';
 import Autocomplete from './components/searchbox/autocomplete';
 
 class SpencerAndWilliamsSearch {

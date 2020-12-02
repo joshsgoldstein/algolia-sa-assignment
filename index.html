@@ -11,11 +11,44 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7/themes/algolia-min.css">
   <link rel="stylesheet" href="./src/index.css">
   <link rel="stylesheet" href="./src/app.css">
+  <link rel="stylesheet" href="./src/components/results/results.css">
+  <!-- <link rel="stylesheet" href="./src/components/searchbox/autocomplete.css"> -->
 
   <title>algolia-sa-assignment</title>
 </head>
 
 <body>
+  <!-- <header
+      class="header preview-searcharea"
+      style="background-color: #ffffff;"
+    >
+      <h1>
+        Federated Search Box
+      </h1>
+
+      <div class="searchWidget widget">
+        <div class="searchWidgetPreview">
+          <div class="ais-SearchBox-wrapper" id="search-wrapper">
+            <div class="ais-SearchBox" id="searchbox"></div>
+          </div>
+        </div>
+        <div class="absolute bottom-0 text-center w-full flex flex-col"></div>
+        <div class="federated-results-container">
+          <div class="column">
+            <h2>Suggestions</h2>
+            <div id="autocomplete-suggestions"></div>
+          </div>
+          <div class="column">
+            <h2>Products</h2>
+            <div id="autocomplete-hits"></div>
+            <a href="#">See more products</a>
+          </div>
+        </div>
+      </div>
+    </header> -->
+
+
+
   <header class="header">
     <div class="header__container">
       <div class="header__logo-container">
@@ -25,10 +58,15 @@
         <div class="header__searchbox" id="searchbox"></div>
         <div class="autocomplete">
           <div class="autocomplete_container">
-            <div class="autocomplete__hits" id="autocomplete-hits">
-            </div>
-            <div class="autocomplete__hits" id="autocomplete-suggestions">
-            </div>
+            <!-- <div class="products"> -->
+              <h3>Products</h3>
+              <div class="autocomplete__hits" id="autocomplete-hits"></div>
+            <!-- </div> -->
+            <!-- <div class="suggestions"> -->
+              <h3>Suggestions</h3>
+              <div class="autocomplete__hits" id="autocomplete-suggestions"></div>
+            <!-- </div> -->
+            
           </div>
         </div>
       </div>
@@ -38,6 +76,9 @@
   <div class="results">
     <div class="results__container">
       <div id="clear-refinements"></div>
+      <div id="current-refinements"></div>
+      <div id="stats"></div>
+      <div id="sort-by"></div>
       <div class="facet-panel">
         <div class="facet-panel__container">
           <h2>Brand</h2>
