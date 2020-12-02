@@ -1,0 +1,48 @@
+/*Results*/
+.results {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 1rem 0;
+  }
+  
+  .results__container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  /* Facets */
+  .facet-panel {
+    flex: 1;
+  }
+  
+  /* Hits */
+  .search-panel {
+    flex: 3;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .search-panel__results li {
+    justify-content: space-between;
+  }
+  
+  .search-panel__results li {
+    width: 30%;
+  }
+  
+  .ais-Highlight-highlighted {
+    color: inherit;
+    font-size: inherit;
+  }
+  
+  #searchbox {
+    margin-bottom: 2rem;
+  }
+  
+  #pagination {
+    margin: 2rem auto;
+    text-align: center;
+  }
+
+/*# sourceMappingURL=/results.f507daab.css.map */
